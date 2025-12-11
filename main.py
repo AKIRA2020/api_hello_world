@@ -23,8 +23,7 @@ async def read_index() -> str:
 
 @app.get("/hello_world")
 async def read_root() -> dict[str, str]:
-    return {"message": "hello world こんにちわ  اهلاً"}
-
+    return {"message": "hello world"}
 
 @app.get("/current_time")
 async def get_current_time() -> dict[str,str]:
@@ -33,6 +32,10 @@ async def get_current_time() -> dict[str,str]:
         "current_time": now.strftime("%Y-%m-%d %H:%M:%S"),
         "timezone": "Asia/Tokyo"
     }
-    
 
-
+@app.get("/greet/{name}")
+async def greet_user(name: str) -> dict[str, str]:
+return {
+    "message": f"Hello {name}!",
+    "timestamp": datetime.now().strftime("%H:%M:%S")
+}
