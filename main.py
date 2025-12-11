@@ -41,7 +41,7 @@ async def greet_user(name: str) -> dict[str, str]:
     }
 
 @app.get("/double/{number}")
-async def double_number (num : int) -> dict [str, int] 
+async def double_number (num : int) -> dict [str, int]:
     return {
         "Input" : num,
         "Result" : num * 10 
