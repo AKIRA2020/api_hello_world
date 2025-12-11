@@ -30,12 +30,19 @@ async def get_current_time() -> dict[str,str]:
     now = datetime.now()
     return {
         "current_time": now.strftime("%Y-%m-%d %H:%M:%S"),
-        "timezone": "Asia/Tokyo"
+        "timezone": "Istanbul"
     }
 
 @app.get("/greet/{name}")
 async def greet_user(name: str) -> dict[str, str]:
-    return {
-        "message": f"Hello {name}!",
-        "timestamp": datetime.now().strftime("%H:%M:%S")
-    }
+return {
+    "message": f"Hello {name}!",
+    "timestamp": datetime.now().strftime("%H:%M:%S")
+}
+
+@app.get("/double/{number}")
+async def double_number (num : int) -> dict [str, int] 
+return {
+    "Input" : num,
+    "Result" : num * 10 
+}
