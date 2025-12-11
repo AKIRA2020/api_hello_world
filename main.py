@@ -35,14 +35,14 @@ async def get_current_time() -> dict[str,str]:
 
 @app.get("/greet/{name}")
 async def greet_user(name: str) -> dict[str, str]:
-return {
-    "message": f"Hello {name}!",
-    "timestamp": datetime.now().strftime("%H:%M:%S")
-}
+    return {
+        "message": f"Hello {name}!",
+        "timestamp": datetime.now().strftime("%H:%M:%S")
+    }
 
 @app.get("/double/{number}")
 async def double_number (num : int) -> dict [str, int] 
-return {
-    "Input" : num,
-    "Result" : num * 10 
-}
+    return {
+        "Input" : num,
+        "Result" : num * 10 
+    }
